@@ -1,0 +1,19 @@
+R:\RbxGifGen\RbxGifGen\bin\Debug\RbxGifGen.exe.config
+R:\RbxGifGen\RbxGifGen\bin\Debug\RbxGifGen.exe
+R:\RbxGifGen\RbxGifGen\bin\Debug\RbxGifGen.pdb
+R:\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.csprojResolveAssemblyReference.cache
+R:\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.Form1.resources
+R:\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.Properties.Resources.resources
+R:\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.csproj.GenerateResource.Cache
+R:\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.exe
+R:\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.pdb
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\bin\Debug\RbxGifGen.exe.config
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.exe
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.pdb
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\bin\Debug\RbxGifGen.exe
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\bin\Debug\RbxGifGen.pdb
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.csprojResolveAssemblyReference.cache
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.Form1.resources
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.Properties.Resources.resources
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.csproj.GenerateResource.Cache
+C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.CreateModel.resources
