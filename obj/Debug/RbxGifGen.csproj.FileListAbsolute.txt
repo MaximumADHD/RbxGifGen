@@ -17,3 +17,13 @@ C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.Form1.reso
 C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.Properties.Resources.resources
 C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.csproj.GenerateResource.Cache
 C:\Users\Maxwell\Google Drive\RbxGifGen\RbxGifGen\obj\Debug\RbxGifGen.CreateModel.resources
+R:\RbxGifGen\bin\Debug\RbxGifGen.exe.config
+R:\RbxGifGen\obj\Debug\RbxGifGen.exe
+R:\RbxGifGen\obj\Debug\RbxGifGen.pdb
+R:\RbxGifGen\bin\Debug\RbxGifGen.exe
+R:\RbxGifGen\bin\Debug\RbxGifGen.pdb
+R:\RbxGifGen\obj\Debug\RbxGifGen.csprojResolveAssemblyReference.cache
+R:\RbxGifGen\obj\Debug\RbxGifGen.CreateModel.resources
+R:\RbxGifGen\obj\Debug\RbxGifGen.Main.resources
+R:\RbxGifGen\obj\Debug\RbxGifGen.Properties.Resources.resources
+R:\RbxGifGen\obj\Debug\RbxGifGen.csproj.GenerateResource.Cache

@@ -43,6 +43,7 @@ namespace RbxGifGen
         {
             byte[] sampleFile = Properties.Resources.Sample;
             string sample = Encoding.UTF8.GetString(sampleFile);
+            // This is a bit messy, but its better than manually generating the XML for the file.
             sample = sample.Replace("%DECAL_URL%", urlInput.Text);
             sample = sample.Replace("%GIF_WIDTH%", gif_canvas.Width.ToString());
             sample = sample.Replace("%GIF_HEIGHT%", gif_canvas.Height.ToString());
@@ -54,7 +55,7 @@ namespace RbxGifGen
             saveFileDialog.ShowDialog();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        public void exit(object sender = null, EventArgs e = null)
         {
             this.Close();
             if (form != null)
@@ -68,12 +69,8 @@ namespace RbxGifGen
             FileStream file = File.Create(saveFileDialog.FileName);
             byte[] stream = Encoding.Default.GetBytes(exportFile);
             file.Write(stream, 0, stream.Length);
-            this.Close();
-            if (form != null)
-            {
-                form.Show();
-            }
             file.Close();
+            exit();
         }
     }
 }

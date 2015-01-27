@@ -13,7 +13,7 @@ using System.IO;
 
 namespace RbxGifGen
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         GifImage currentGif = null;
         Bitmap currentBitmap = null;
@@ -26,13 +26,18 @@ namespace RbxGifGen
 
         public async void Precache()
         {
+            // Preload all frames in the gif so we dont run out of memory cloning images over and over again.
             this.gifDisplay.Visible = false;
             this.loadLabel.Visible = true;
+            Size regularSize = this.Size;
+            this.Size = new Size(this.Width, this.Height + this.loadLabel.Height);
             await Task.Delay(500);
+            currentGif.currentFrame = 0;
             for (int i = 0; i < currentGif.frameCount; i++)
             {
                 currentGif.GetNextFrame();
             }
+            this.Size = regularSize;
             this.loadLabel.Visible = false;
             this.gifDisplay.Visible = true;
         }
@@ -51,48 +56,37 @@ namespace RbxGifGen
                 frameRateInput.Enabled = true;
                 gifTimer.Start();
             }
+            gifDisplay.BackColor = Color.Transparent;
         }
 
-        public void SavePath(string path)
-        {
-            Properties.Settings.Default.SavedDir = path;
-            Properties.Settings.Default.Save();
-        }
-
-        public Form1()
+        public Main()
         {
             InitializeComponent();
-            string savedPath = Properties.Settings.Default.SavedDir;
-            if (savedPath != "null")
-            {
-                if (File.Exists(savedPath))
-                {
-                    LoadImage(savedPath);
-                }
-                else
-                {
-                    SavePath("null");
-                }
-            }
-            Console.WriteLine("Path: " + savedPath);
         }
 
-        private void exportButton_Click(object sender, EventArgs e)
+        public Bitmap buildSpriteMap(string path)
         {
+            // Takes a gif image and builds a sprite map image for its frames.
             GifImage image = new GifImage(filePath.Text);
             Image canvas = Image.FromFile(filePath.Text);
             int count = image.frameCount;
             int root = (int)Math.Floor(Math.Sqrt((double)count));
-            currentBitmap = new Bitmap(canvas.Width * root, (1+(int)Math.Floor((double)(image.frameCount) / root)) * canvas.Height);
-            Graphics main = Graphics.FromImage(currentBitmap);
-            while (image.currentFrame < image.frameCount-1)
+            Bitmap spriteMap = new Bitmap(canvas.Width * root, (1 + (int)Math.Floor((double)(image.frameCount) / root)) * canvas.Height);
+            Graphics main = Graphics.FromImage(spriteMap);
+            while (image.currentFrame < image.frameCount)
             {
                 Image currentImage = image.GetNextFrame();
                 int x = (image.currentFrame % root) * currentImage.Width;
                 int y = (int)Math.Floor((double)(image.currentFrame / root)) * currentImage.Height;
                 Rectangle drawAt = new Rectangle(x, y, canvas.Width, canvas.Height);
-                main.DrawImage(currentImage,drawAt);
+                main.DrawImage(currentImage, drawAt);
             }
+            return spriteMap;
+        }
+
+        private void exportButton_Click(object sender, EventArgs e)
+        {
+            currentBitmap = buildSpriteMap(filePath.Text);
             saveFileDialog.ShowDialog();
         }
 
@@ -103,8 +97,10 @@ namespace RbxGifGen
 
         private void openFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            SavePath(openFileDialog.FileName);
-            LoadImage(openFileDialog.FileName);
+            if (openFileDialog.FileName != filePath.Text)
+            {
+                LoadImage(openFileDialog.FileName);
+            }
         }
 
         private void gifTimer_Tick(object sender, EventArgs e)

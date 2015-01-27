@@ -1,6 +1,6 @@
 ﻿namespace RbxGifGen
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.gifDisplay = new System.Windows.Forms.PictureBox();
             this.imageTitle = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -48,7 +48,7 @@
             // 
             // gifDisplay
             // 
-            this.gifDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.gifDisplay.BackColor = System.Drawing.Color.Black;
             this.gifDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.gifDisplay.Location = new System.Drawing.Point(16, 56);
             this.gifDisplay.Name = "gifDisplay";
@@ -158,11 +158,12 @@
             this.loadLabel.Text = "LOADING GIF...";
             this.loadLabel.Visible = false;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 197);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(233, 165);
             this.Controls.Add(this.loadLabel);
             this.Controls.Add(this.inputDPF);
             this.Controls.Add(this.framesLabel);
@@ -176,7 +177,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RbxGifGen";
             ((System.ComponentModel.ISupportInitialize)(this.gifDisplay)).EndInit();
